@@ -4,7 +4,7 @@ import Product from './Product/Product'
 import makeStyles from './style'
 
 
-const Products = ({ products }) => {
+const Products = ({ products, onAddToCart }) => {
     const classes = makeStyles()
  
    return (
@@ -14,7 +14,7 @@ const Products = ({ products }) => {
         {products.map(product => (
            
             <Grid item key={product.id} xs={12} sm={6} md={14} lg={3}>
-                <Product product={product}/>
+                <Product product={product} onAddToCart={onAddToCart}/>
             </Grid>
         ))}
 
