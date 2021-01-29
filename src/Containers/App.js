@@ -58,7 +58,7 @@ const App = () => {
         <Router>
              <div>
                 <Navbar totalItems={cart.total_items}/>
-                <div style={{display: 'grid', gridTemplateColumns: '24% 86%'}}>
+                <div style={{display: 'flex'}}>
                     <SideMenu />
                     <Switch >
                   

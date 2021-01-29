@@ -23,7 +23,7 @@ function Items() {
             { items.map((item, i) => {
                 return (
                     <li style={classes.item} key={item[0]+i}>
-                        <img src={item[1]} height="20px"/>
+                        <div style={classes.Icon}><img src={item[1]} height="20px"/></div>
                         {console.log(item[1])}
                         <Typography style={classes.Text} variant="subtitle1">{item[0]}</Typography>
                     </li>

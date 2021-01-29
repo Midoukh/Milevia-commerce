@@ -4,8 +4,7 @@ const useStyles = {
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'space-between',
-        width: '100%',
-        paddingTop: '15vh'
+        width: '100%'
     },
     item: {
         listStyle: 'none',
@@ -18,6 +17,15 @@ const useStyles = {
         fontWeight: '700',
         opacity: '.8',
         marginLeft: '1em'
+    },
+    Icon: {
+        height: '2rem',
+        width: '2rem',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        borderRadius: '50%',
+        backgroundColor: 'rgba(0, 140, 166, 0.15)',
     }
 
 
