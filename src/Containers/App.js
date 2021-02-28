@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-import { Products, Navbar, Cart, Checkout, SideMenu } from '../Components'
+
+import { Products, Navbar, Cart, Checkout, SideMenu, Signup, Login, Dashboard } from '../Components'
 import { commerce } from  '../lib/commerce'
+
 
 const App = () => {
     const [products, setProducts] = useState([])
     const [cart, setCart] = useState({})
     const [order, setOrder] = useState({})
     const [errorMessage, setErrorMessage] = useState('')
-
     const fetchProducts = async () => {
         const { data } = await commerce.products.list()
 
@@ -57,9 +58,14 @@ const App = () => {
     return (
         <Router>
              <div>
-                <Navbar totalItems={cart.total_items}/>
+                 <Route exact path="/">
+                    <Navbar totalItems={cart.total_items}/>
+                 </Route>
+                
                 <div style={{display: 'flex'}}>
+                 <Route exact path="/">
                     <SideMenu />
+                 </Route>
                     <Switch >
                   
                     <Route exact path="/">
@@ -81,6 +87,17 @@ const App = () => {
                         error={errorMessage}
                         refreshCart={refreshCart}
                         />
+                    </Route>
+                    <Route exact path="/signup">
+                            <Signup />
+                    </Route>
+
+                    <Route exact path="/login">
+                            <Login />
+                    </Route>
+
+                    <Route exact path="/dashboard">
+                        <Dashboard />
                     </Route>
 
                 </Switch>

@@ -1,7 +1,7 @@
 const useStyles = {
     Items : {
         minHeight: '40%',
-        display: 'flex',
+        display: 'inline-flex',
         flexDirection: 'column',
         justifyContent: 'space-between',
         width: '100%'

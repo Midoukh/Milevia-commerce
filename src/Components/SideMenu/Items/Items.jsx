@@ -19,6 +19,7 @@ function Items() {
         ['Outlet', briefcase]
     ]
     return (
+        <>
         <ul style={classes.Items}>
             { items.map((item, i) => {
                 return (
@@ -30,6 +31,7 @@ function Items() {
                 )
             }) }
         </ul>
+        </>
     )
 }
 

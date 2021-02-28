@@ -1,0 +1,16 @@
+.UploadFile{
+    font-family: sans-serif;
+    margin-top: 1rem;
+    cursor: pointer;
+    width: 100%;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+}
+.UploadFile img{
+    height: 80px;
+}
+.UploadFile h1{
+    color: black;
+    opacity: .8;
+}

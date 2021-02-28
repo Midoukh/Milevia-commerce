@@ -1,0 +1,103 @@
+.Login{
+    min-height: 100vh;
+    width: min(1000px, 400px);
+    box-sizing: border-box;
+    display: flex;
+    flex-flow: column;
+    padding-top: 5%;
+    align-items: center;
+    font-family: sans-serif;
+}
+.Login [datatype="logo"]{
+    height: 60px;
+}
+.Login div:first-child{
+    display: flex;
+    align-items: center;
+}
+.Login form {
+    height: 30%;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-evenly;
+    width: 100%;
+    padding: 1rem;
+    box-sizing: border-box;
+}
+.Login form label{
+    display: flex;
+    flex-flow: column;
+    margin-bottom: .5rem;
+    
+}
+.Login form label input{
+    box-sizing: border-box;
+    border: none;
+    padding: .4rem 1rem;
+    border-radius: 7px;
+    width: 100%;
+    margin-top: .5rem;
+    border: 1px solid rgba(0, 0, 0, 0.479);
+    outline-color: rgba(45, 10, 122, 0.616);
+
+
+}
+.Login form button{
+    margin-top: 1rem;
+    border-radius: 7px;
+    box-sizing: border-box;
+    border: none;
+    padding-block: .5rem;
+    color: white;
+    background-color: rgb(46, 10, 122);
+    cursor: pointer;
+    transition: all .2s cubic-bezier(0.23, 1, 0.320, 1);
+    margin-bottom: 5rem;
+}
+.Login form button:disabled{
+    cursor: not-allowed;
+}
+.Login form button:hover{
+    opacity: .8;
+
+}
+.Login h5>a {
+    text-decoration: none;
+    color: coral;
+}
+.Error{
+    width: 70%;
+    height: 7vh;
+    margin-top: 1rem;
+    background-color: rgb(255, 46, 92);
+    border: .7px solid rgba(211, 6, 50, 0.657);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgba(255, 255, 255, 0.753);
+    transition: all 0.3s cubic-bezier(0.39, 0.575, 0.565, 1);
+    margin-bottom: 1rem;
+
+}
+.Error span{
+    color: rgba(0, 0, 0, 0.931);
+    padding: .7rem;
+    cursor: pointer;
+    font-weight: 900;
+    transition: all 0.2s cubic-bezier(0.23, 1, 0.320, 1);
+    margin-left: 4rem;
+}
+.Error span:hover{
+    color: white;
+}
+.Spinner{
+    animation-name: spinner;
+    animation-duration: 1s;
+    animation-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1);
+    animation-iteration-count: infinite;
+}
+@keyframes spinner {
+    0%{transform: rotate(0deg);}
+    100%{transform: rotate(360deg);}
+
+}

@@ -1,0 +1,163 @@
+.Dashboard{
+    min-height: 100vh;
+    width: 100vw;
+    display: grid;
+    grid-template-columns: 25% 75%;
+    font-family: sans-serif;
+}
+.Dashboard aside{
+    background-color: rgb(4, 7, 34);
+    padding-top: 1rem;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+.Home{
+    padding: 1rem;
+    background-color: rgb(238, 237, 237);
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-row-gap: .5rem;
+    grid-column-gap: .5rem;
+}
+.Home div{
+    background-color: white;
+    padding: .4rem;
+    box-sizing: border-box;
+}
+.Orders{
+    grid-row: span 2;
+    grid-column: span 2;
+}
+.MyOrders{
+    list-style: none;
+}
+.MyOrders li{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    border-bottom: 1px solid lightgray;
+}
+.Avatar {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+}
+.Current{
+    border-radius: 50%;
+    border: 2px solid crimson;
+    height: 85px;
+}
+.Add{
+    position: absolute;
+    top: 90%;
+    cursor: pointer;
+    height: 20px;
+}
+.Dashboard aside h2{
+    color: white;
+    text-transform: capitalize;
+}
+.Dashboard aside h3{
+    opacity: 0.6;
+    color: white;
+}
+.List{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.List ul{
+    list-style: none;
+    color: white;
+}
+.List ul li{
+    display: flex;
+    align-items: center;
+    margin-bottom: .5rem;
+    cursor: pointer;
+}
+.List ul li img{
+    height: 25px;
+    margin-right: 1rem;
+}
+.List ul li i{
+    margin-right: 1rem;
+    font-size: 1.5rem;
+    color: #00ffff;
+}
+.UploadAvatarCls{
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 11111;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.close{
+    height: 50px;
+    position: absolute;
+    top: 5vh;
+    right: 3vw;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.close:hover{
+    height: 53.5px;
+
+}
+/* uploader */
+.container{
+    min-height: 400px;
+    width: 400px;
+    border-radius: 10px;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    padding: 1rem;
+    box-sizing: border-box;
+  }
+  .heading{
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 1rem;
+    font-weight: bold;
+  
+  }
+  .imgHolder{
+    margin: auto;
+    width: 150px;
+    height: 150px;
+    border: 3px black solid;
+    border-radius: 5px;
+    margin-top: 1rem;
+  }
+  .img{
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+  }
+  #input[type="file"], .file {
+      display: none;
+      height: 50px;
+  }
+  .label{
+    width: 100%;
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+}
+.Buttons{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+

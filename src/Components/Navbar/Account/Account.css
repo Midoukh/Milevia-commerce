@@ -1,0 +1,24 @@
+.Avatar{
+    border-radius: 50%;
+    position: relative;
+    right: 5%;
+    border: 1.5px yellow solid;
+    cursor: pointer;
+}
+.Arrow{
+    background-color: rgb(240, 240, 240);
+    height: 4vh;
+    width: 2vw;
+    transform: rotate(45deg);
+    position: absolute;
+    top: 86%;
+    right: 0;
+    right: 10.4%;
+    display: none;
+    opacity: 0;
+    transition: all 0.2s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+.show{
+    display: block;
+    opacity: 1;
+}

@@ -1,0 +1,63 @@
+.Dropdown{
+    height: 25vh;
+    width: 25vw;
+    background-color: white;
+    border: .5px solid lightgrey;
+    position: absolute;
+    box-shadow: 1.5px 1.5px 30px rgba(0, 0, 0, 0.52);
+    padding-bottom: 1rem;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    top: 144%;
+    left: 68%;
+    font-family: sans-serif;
+    z-index: 1;
+    transform: translateY(-200%);
+    transition: all 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.show{
+    transform: translateY(0);
+}
+.Access{
+    background-color: rgb(240, 240, 240);
+    display: flex;
+    align-items: center;
+    height: 28%;
+    width: 100%;
+    justify-content: space-around;
+}
+.Access h2{
+    cursor: pointer;
+    color: rgb(14, 136, 207);
+    transition: a 0.3 cubic-bezier(0.86, 0, 0.07, 1);
+}
+.Access h2:hover{
+    color: white;
+}
+.Options{
+    /* background-color: green; */
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    padding-bottom: 2.5rem;
+    height: 72%;
+    padding-left: 0;
+}
+.Options div{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.215, 0.610, 0.355, 1);
+    padding-left: 2.5rem;
+    box-sizing: border-box;
+
+}
+.Options div:hover{
+    background-color: rgb(240, 240, 240);
+}
+.Options img{
+    height: 4vh;
+    margin-right: 1vw;
+}

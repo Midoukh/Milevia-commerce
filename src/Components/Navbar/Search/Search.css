@@ -1,0 +1,27 @@
+.SearchBar{
+    min-height: 6vh;
+    width: 18%;
+    border-radius: 11px;
+    display: flex;
+    background-color: rgba(173, 216, 230, 0.205);
+    position: relative;
+    right: 25%;
+    align-items: center;
+    padding-left: .5rem;
+}
+.SearchInput{
+    background-color: transparent;
+    height: 100%;
+    width: 80%;
+    outline: none;
+    border: none;
+}
+.SearchInput::placeholder{
+    opacity: .6;
+}
+.Icon{
+    opacity: .4;
+    font-size: 1.2em;
+    margin-right: .4rem;
+    cursor: pointer;
+}

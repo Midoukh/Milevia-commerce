@@ -1,5 +1,21 @@
 .Banner{
-    width: 80%;
-    height: 20vh;
-    background: linear-gradient(80deg, rgb(17, 6, 117), rgb(4, 80, 124));
+    width: 75%;
+    height: 45vh;
+    background: linear-gradient(180deg,rgb(134, 78, 255),rgb(46, 10, 122));
+    border-radius: 10px;
+    color: white;
+    font-weight: 700;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    line-height: 1.5em;
+    word-wrap: break-word;
+    font-size: 1.2em;
+    margin-top: 5vh;
+    padding: 1rem;
+}
+.Percentage{
+    padding: .3rem .6rem;
+    border-radius: 15px;
+    background-color: rgba(255, 255, 255, .4);
 }

@@ -1,0 +1,186 @@
+.Signup{
+    min-height: 100vh;
+    /* width: min(1000px, 400px); */
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-flow: column;
+    padding-top: 5%;
+    /* font-family: sans-serif; */
+    background: rgba( 255, 255, 255, 0.25 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    align-items: center;
+    justify-content: center;
+    font-family: 'Roboto', sans-serif;
+
+}
+.Signup [datatype="logo"]{
+    height: 60px;
+}
+
+
+.Signup form {
+    height: 30%;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-evenly;
+    padding: 1rem;
+    box-sizing: border-box;
+    align-items: center;
+    min-width: 100%;
+    padding-left: 1.5vw;
+    padding-right: 1.5vw;
+}
+.Signup form label{
+    display: flex;
+    flex-flow: column;
+    margin-bottom: .5rem;
+    font-weight: 700;
+}
+
+.Signup form label input{
+    box-sizing: border-box;
+    border: none;
+    padding: .4rem 1rem;
+    border-radius: 7px;
+    margin-top: .5rem;
+    border: 1px solid rgba(0, 0, 0, 0.479);
+    outline-color: rgba(45, 10, 122, 0.616);
+}
+
+.Signup form button{
+    margin-top: 1rem;
+    border-radius: 7px;
+    box-sizing: border-box;
+    border: none;
+    padding-block: .5rem;
+    color: white;
+    background-color: rgb(46, 10, 122);
+    cursor: pointer;
+    transition: all .2s cubic-bezier(0.23, 1, 0.320, 1);
+    margin-bottom: 5rem;
+    box-sizing: border-box;
+}
+
+.Signup form button:disabled{
+    cursor: not-allowed;
+}
+.Signup form button:hover{
+    opacity: .8;
+
+}
+.Signup h5>a {
+    text-decoration: none;
+    color: coral;
+}
+.Error{
+    width: 70%;
+    height: 7vh;
+    margin-top: 1rem;
+    background-color: rgb(255, 46, 92);
+    border: .7px solid rgba(211, 6, 50, 0.657);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgba(255, 255, 255, 0.753);
+    transition: all 0.3s cubic-bezier(0.39, 0.575, 0.565, 1)
+
+}
+.Error span{
+    color: rgba(0, 0, 0, 0.931);
+    padding: .7rem;
+    cursor: pointer;
+    font-weight: 900;
+    transition: all 0.2s cubic-bezier(0.23, 1, 0.320, 1);
+    margin-left: 1rem;
+}
+.Error span:hover{
+    color: white;
+}
+@media (min-width: 1300px){
+    .Signup form, .Signup form label input, .Signup form button{
+        width: 25vw;
+    }
+    .Signup div:first-child{
+        display: flex;
+        align-items: center;
+    }
+}
+@media (max-width: 1299px){
+    .Signup form, .Signup form label input, .Signup form button{
+        width: 30vw;
+    }
+    .Signup div:first-child{
+        display: flex;
+        align-items: center;
+    }
+}
+@media (max-width: 1000px){
+    .Signup form, .Signup form label input, .Signup form button{
+        width: 40vw;
+    }
+    .Signup div:first-child{
+        display: flex;
+        align-items: center;
+    }
+}
+
+@media (max-width: 800px){
+    .Signup form, .Signup form label input, .Signup form button{
+        width: 60vw;
+    }
+    .Signup div:first-child{
+        display: flex;
+        align-items: center;
+    }
+}
+@media (max-width: 600px){
+    .Signup form, .Signup form label input, .Signup form button{
+        width: 70vw;
+    }
+    .Signup div:first-child{
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+       
+    }
+}
+@media (max-width: 500px){
+    .Signup form, .Signup form label input, .Signup form button{
+        width: 80vw;
+    }
+    .Signup div:first-child{
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+      
+
+    }
+}
+@media (max-width: 400px){
+    .Signup form, .Signup form label input, .Signup form button{
+        width: 90vw;
+    }
+    .Signup div:first-child{
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+       font-size: 14px;
+
+    }
+}
+.Spinner{
+    animation-name: spinner;
+    animation-duration: 1s;
+    animation-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1);
+    animation-iteration-count: infinite;
+}
+@keyframes spinner {
+    0%{transform: rotate(0deg);}
+    100%{transform: rotate(360deg);}
+
+}

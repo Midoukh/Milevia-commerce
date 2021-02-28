@@ -1,0 +1,19 @@
+.Ad{
+    background: radial-gradient(#032444, #2581a8);
+    max-height: 56vh;
+    margin-top: 2.5vh;
+    border-radius: 15px;
+    /* height: 15vh; */
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 1.5rem;
+    color: white;
+    font-family: sans-serif;
+    font-size: 1.6vw;
+
+}
+.Ad::after{
+    filter: blur(5px);
+}
