@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react'
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-
+import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom'
 import { Products, Navbar, Cart, Checkout, SideMenu, Signup, Login, Dashboard } from '../Components'
 import { commerce } from  '../lib/commerce'
+import jwt_decode from 'jwt-decode';
+import Footer from '../Components/Footer/Footer'
+import axios from 'axios'
 
 
 const App = () => {
@@ -10,6 +12,57 @@ const App = () => {
     const [cart, setCart] = useState({})
     const [order, setOrder] = useState({})
     const [errorMessage, setErrorMessage] = useState('')
+    const [isAuthenticated, setIsAuthenticated] = useState(false)
+    const [avatar, setAvatar] = useState('')
+    const [expireToken, setExpiredToken] = useState(false)
+    const [userLocation, setLocation] = useState(null)
+    //protecting the dashboard route
+    const login = () => {
+        const token = localStorage.getItem('milevia_user_token')
+
+        const decoded = jwt_decode(token);
+ 
+        setAvatar(prev => prev = decoded.profile.avatar)
+        //check if jwt is expired
+        const expireToken = decoded.exp
+        const isExpired = new Date() > expireToken*1000
+
+        console.log(isExpired)
+
+        setIsAuthenticated(prev => prev = !isExpired)
+
+
+      
+
+    }
+    const handleFetchLocation = () => {
+
+        axios.get(`http://www.geoplugin.net/json.gp`)
+        .then(response => {
+            let data = response.data;
+            const countryName = data.geoplugin_countryName
+
+            if (countryName){
+                const getFlagByCountryCode = `
+                https://restcountries.eu/rest/v2/name/${countryName}?fullText=true`
+                
+                const res = axios.get(getFlagByCountryCode)
+                .then(data => {
+                    setLocation(prev => prev = data)
+                    console.log(data)
+                })
+                .catch(err => console.log(err))
+            }
+
+        }).catch(error => {
+            console.log(error);
+        });
+
+
+    }
+
+
+
     const fetchProducts = async () => {
         const { data } = await commerce.products.list()
 
@@ -51,15 +104,21 @@ const App = () => {
         }
     }
     useEffect(() => {
+        handleFetchLocation()
         fetchProducts()
         fetchCart()
+        login()
     }, [])
     console.log(cart.line_items)
     return (
         <Router>
              <div>
                  <Route exact path="/">
-                    <Navbar totalItems={cart.total_items}/>
+                    <Navbar 
+                    totalItems={cart.total_items} 
+                    avatar={avatar}
+                    isAuthenticated={isAuthenticated}
+                    />
                  </Route>
                 
                 <div style={{display: 'flex'}}>
@@ -93,17 +152,18 @@ const App = () => {
                     </Route>
 
                     <Route exact path="/login">
-                            <Login />
+                            <Login setIsAuthenticated={setIsAuthenticated}/>
                     </Route>
 
-                    <Route exact path="/dashboard">
-                        <Dashboard />
+                    <Route exact path="/dashboard" >
+                        {isAuthenticated? <Dashboard userLocation={userLocation && userLocation}/>: <Redirect to="/login" />}
                     </Route>
+                     
 
                 </Switch>
 
                 </div>
-                
+                    {userLocation && <Footer userLocation={ userLocation && userLocation }/>}
              </div>
         </Router>
        

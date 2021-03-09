@@ -3,6 +3,7 @@ import User from '../models/userModel.js'
 import { registerValidation, loginValidation } from '../validation.js'
 import bcrypt from 'bcryptjs'
 
+import jwt from 'jsonwebtoken'
 const authRoute = express.Router()
 
 //register route
@@ -28,6 +29,7 @@ authRoute.post('/register', async (req, res) => {
         name: req.body.name,
         email: req.body.email,
         password: password,
+        profile: req.body.profile
       })
       try {
         const savedUser = await user.save();
@@ -58,14 +60,40 @@ authRoute.post('/login', async(req, res) => {
 
   if (!validPassword) return res.status(400).json({ error: "Password is wrong" });
 
-  res.json({
-    error: null,
-    data: {
-      message: "Login successful",
+   // create token
+   const token = jwt.sign(
+    // payload data
+    {
+      name: user.name,
+      id: user._id,
+      profile: user.profile
     },
-  });
+    process.env.TOKEN_SECRET,
+    {
+      expiresIn: '20m'
+    }
+    );
+    res.header("auth-token", token).json({
+      error: null,
+      data: {
+        token,
+        userName: user.name,
+        userId: user.id,
+        profile: user.profile
+
+      },
+    });
+
 
 })
+
+//update route
+authRoute.get('/login', async(req, res) => {
+  //validate the user
+  res.status(200).json(({ message: 'you are the one' }))
+
+})
+
 
 
 export default authRoute

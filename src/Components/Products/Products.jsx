@@ -3,7 +3,7 @@ import { Grid } from '@material-ui/core'
 import Product from './Product/Product'
 import makeStyles from './style'
 import Ad from './Ad/Ad'
-
+import FashionBG from './FashionBG/FashioBG'
 
 const Products = ({ products, onAddToCart }) => {
     const classes = makeStyles()
@@ -12,6 +12,7 @@ const Products = ({ products, onAddToCart }) => {
     <main className={classes.content}>
     <div className={classes.toolbar}/>
     <Grid container justify="center" spacing={4} >
+        <FashionBG />
         <Ad />
         {products.map(product => (
            

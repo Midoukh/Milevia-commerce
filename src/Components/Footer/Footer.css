@@ -1,0 +1,42 @@
+.Footer{
+    box-sizing: border-box;
+    max-width: 100vw;
+    min-height: 45vh;
+    background-color: rgb(19, 17, 17);
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    color: rgb(243, 236, 236);
+    padding: 1rem;
+    font-family: sans-serif;
+}
+.Footer div{
+    margin-left: 1rem;
+}
+.Footer li{
+    list-style: none;
+    margin-bottom: 5px;
+}
+.Footer ul{
+    box-sizing: border-box;
+    width: 100%;
+    display: flex;
+    flex-flow: column;
+    align-items: flex-start;
+    padding: 0;
+   
+}
+.Category{
+    display: flex;
+    flex-flow: column;
+    align-items: flex-start;
+}
+.Location{
+    display: flex;
+    align-items: center;
+}
+.Flag{
+    height: 30px;
+    margin-left: .4rem;
+    border: 2px solid cyan;
+    border-radius: 10px;
+}

@@ -3,6 +3,8 @@ import mongoose from 'mongoose'
 import bodyParser from 'body-parser'
 import cors from 'cors'
 import authRoute from './routes/auth.routes.js'
+import verifyToken from './routes/validate_token.js'
+import dashboardRouter from './routes/dashboard.js' 
 import dotenv from 'dotenv'
 
 
@@ -21,6 +23,8 @@ app.use(cors())
 //route middlewares
 app.use('/api/user', authRoute)
 
+// this route is protected with token
+app.use('/api/dashboard', verifyToken, dashboardRouter);
 
 const PORT = process.env.PORT || 5000
 

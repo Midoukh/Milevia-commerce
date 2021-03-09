@@ -31,7 +31,9 @@ const Login = props => {
             await accessUser(loginUser)
             .then(res => {
                 console.log(res)
+                props.setIsAuthenticated(prev => prev = true)
                 setLoading(prev => prev = false)
+                localStorage.setItem('milevia_user_token', res.data.data.token)
                 history.push('/dashboard')
 
             })

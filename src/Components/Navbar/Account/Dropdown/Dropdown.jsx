@@ -16,8 +16,8 @@ const Dropdown = props => {
                 <h2>X</h2>
             </div>
             <ul className={classes.Options}>
-                <CustomLink tag="div" to="/signup">
-                    <img src={user} alt="user"/>
+                <CustomLink tag="div" to={props.isAuthenticated? "/dashboard": "/login"}>
+                    <img src={props.avatar || user} alt="user"/>
                     <h3>My account</h3>
                 </CustomLink>
                 <div>

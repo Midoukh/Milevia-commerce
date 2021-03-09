@@ -33,6 +33,7 @@ const Navbar = (props) => {
         setShowDrop(previous => previous = !previous)
     }
 
+
     return (
         <AppBar position="fixed" className={classes.appBar} color="inherit">
             <Toolbar>
@@ -43,7 +44,12 @@ const Navbar = (props) => {
                 <Gender activeWomen={women} activeMen={men} switchGender={handleGenderSwap}/>
                 <div className={classes.grow}/>
                 <Search />
-                <Account show={showDrop} showDrop={handleShowDropdown}/>
+                <Account 
+                show={showDrop} 
+                showDrop={handleShowDropdown} 
+                avatar={props.avatar}
+                isAuthenticated={props.isAuthenticated}
+                />
                 {location.pathname === '/'&& (
                 <div className={classes.button}>
                     <IconButton aria-label="show cart items" color="inherit" component={Link} to="/cart">

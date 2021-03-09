@@ -8,7 +8,7 @@ import avatar from '../../assets/user.svg'
 import Role from './Role/Role'
 import Auxi from '../HOC/Auxi'
 import Backdrop from '../Backdrop/Backdrop'
-
+import { base64Avatar } from './base64Avatar'
 const Login = ({  }) => {
     const emailRef = useRef()
     const passwordRef = useRef()
@@ -21,6 +21,7 @@ const Login = ({  }) => {
     const [loading, setLoading] = useState(false)
     const[role, setRole] = useState('')
     const[showRole, setShowRole] = useState(false)
+    const[defaultAvatarBase64, setDefaultAvatarBase64] = useState('')
 
 
     const hideWarning = () => {
@@ -32,6 +33,20 @@ const Login = ({  }) => {
                    </div>
 
     const handleSubmit = async (e) => {
+        e.preventDefault()
+
+        //encode image to base64
+        // const handleReaderLoader = (readerEvent) => {
+        //     const binaryString = readerEvent.target.result
+
+        //     setDefaultAvatarBase64(prev => prev = binaryString)
+            
+        //     console.log(defaultAvatarBase64)
+        // }
+        // const reader = new FileReader()
+        // reader.onload = handleReaderLoader(e)
+        // reader.readAsBinaryString(avatar)
+
         const email = emailRef.current.value
         const password = passwordRef.current.value
         const confirmPassword = confirmPasswordRef.current.value
@@ -39,11 +54,11 @@ const Login = ({  }) => {
         const newUser = {
             name: name,
             email: email,
-            password: password
+            password: password,
+            profile: { avatar: base64Avatar }
         }
         setNewUser(prev => prev = newUser)
 
-        e.preventDefault()
         if (password !== confirmPassword){
             setMatchError('Password doesn\'t match')
             uiError =  <div className={classes.Error}>

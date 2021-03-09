@@ -16,9 +16,21 @@
     padding: 1rem;
     background-color: rgb(238, 237, 237);
     display: grid;
-    grid-template-columns: 50% 50%;
+    grid-template-columns: 40% 60%;
     grid-row-gap: .5rem;
     grid-column-gap: .5rem;
+}
+.Welcome{
+    min-height: 50vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.Welcome h2{
+    text-shadow: 2px 2px 30px white;
 }
 .Home div{
     background-color: white;
@@ -161,3 +173,10 @@
     justify-content: space-between;
 }
 
+.Map{
+    background-color: red;
+    overflow: hidden;
+}
+.active{
+    color: green;
+}
